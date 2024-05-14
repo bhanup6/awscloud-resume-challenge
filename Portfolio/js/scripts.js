@@ -41,30 +41,18 @@ function toggle_onclick($win, $navbar, width) {
         $navbar.css({ left: '0px' });
     }
 }
-const counter = document.querySelector(".counter-number");
+const visitcounter = document.querySelector(".counter-number");
 async function updateCounter() {
     let response = await fetch(
-        "https://v7akbrstqlpdscuvepsgeuihsu0ohxku.lambda-url.us-east-1.on.aws/"
+        "https://ui2y09u2fc.execute-api.us-east-1.amazonaws.com/Prod/GetSendItems"
     );
     let data = await response.json();
-    counter.innerHTML = `Views: ${data}`;
+    visitcounter.innerHTML = `Views: ${data}`;
+    console.log("haidata")
 }
 updateCounter();
 var typed = new Typed('#typed', {
     strings: [
-        'VMWare Infra Architect',
-        'Cloud Engineer',
-        'Infra Automation Engineer',
-        'DevOps Engineer'
-    ],
-    typeSpeed: 50,
-    backSpeed: 50,
-    loop: true
-});
-
-var typed_2 = new Typed('#typed_2', {
-    strings: [
-        'VMWare Infra Architect',
         'Cloud Engineer',
         'Cloud Architect',
         'DevOps Engineer'
@@ -74,6 +62,16 @@ var typed_2 = new Typed('#typed_2', {
     loop: true
 });
 
+var typed_2 = new Typed('#typed_2', {
+    strings: [
+        'Cloud Engineer',
+        'Cloud Architect',
+        'DevOps Engineer'
+    ],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+});
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
